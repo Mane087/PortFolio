@@ -3,6 +3,11 @@ import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import LinkButton from "./LinkButton.astro"
+import Vue from "./icons/Vue.astro"
+import Sass from "./icons/Sass.astro"
+import Node from "./icons/Node.astro"
+import MySQL from "./icons/MySQL.astro"
+import Vite from "./icons/Vite.astro"
 
 const TAGS = {
   NEXT: {
@@ -15,31 +20,47 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  VUE: {
+    name: "Vue.js",
+    class: "bg-black text-white",
+    icon: Vue,
+  },
+  SASS: {
+    name: "Sass",
+    class: "bg-black text-white",
+    icon: Sass,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-black text-white",
+    icon: Node,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-black text-white",
+    icon: MySQL,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-black text-white",
+    icon: Vite,
+  },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "JC-SPORT: Un sistema para control de equipos deportivos",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
+      "Sistema que permite llevar el control de equipos de una academia de futbol infantil. Creado con la finalidad de poder mostrar el avance de los juadores a sus padres. ",
+    link: "https://jc-sportclub.com/#/",
+    image: "/projects/jc-sport proyect.webp",
+    tags: [TAGS.VUE, TAGS.SASS, TAGS.NODE, TAGS.MYSQL, TAGS.VITE], 
+  }
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, link }) => (
       <article>
         <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
           {title}
@@ -64,12 +85,7 @@ const PROJECTS = [
           alt={`Captura de pantalla del proyecto ${image}`}
         />
         <footer class="flex gap-x-4 items-end justify-start mt-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Ver código fuente
-            </LinkButton>
-          )}
+          
           <LinkButton href={link}>
             <svg
               width="24"
